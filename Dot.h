@@ -8,29 +8,22 @@
 #ifndef DOT_H_
 #define DOT_H_
 
-/*
-#define MAX_DOTS 30
-#define ROW_SIZE 5
-#define COLUMN_SIZE 6
-
-typedef struct {
-	int x;
-	int y;
-	int vx;
-	int vy;
-} Dot, *PDot;
-*/
+//
+// This file should contain all the declarations to move, create, and store
+// dot movement.
+//
 
 //
 // Defines
 //
 
-#define DOT_NUM_ROWS 2
-#define DOT_NUM_COLS 5
-#define DOT_MAX_DOTS (DOT_NUM_ROWS * DOT_NUM_COLS)
+#define NUM_ROWS 2
+#define NUM_COLS 5
+
+#define MAX_NUM_DOTS (NUM_ROWS) * (NUM_COLS)
 
 //
-// Types
+// Structs
 //
 
 typedef struct {
@@ -38,46 +31,24 @@ typedef struct {
 	signed char y;
 } Vector, *PVector;
 
-typedef struct {
-	Vector vel;
-	Vector loc;
-	Vector NextLoc;
-	BOOL Collision;
+typef struct {
+	Vector veloc;
+	Vector pos;
 } Dot, *PDot;
 
 //
-// Initialization
+// Functions
 //
 
-void
-Dot_Init(void);
+void DotInit();
 
-//
-// Generation
-//
+int DotAdd();
 
-BOOL
-Dot_CreateDot(Vector* location, Vector* veloc);
+int DotCount();
 
+void DotMove(unsigned char index);
 
-//
-// Movement
-//
-
-void
-Dot_MoveDots(void);
-
-//
-// Cleanup
-//
-
-//
-// TODO: May need to update this fucntion with something else that represents
-// slowly moving out all the stuff
-//
-
-#define Dot_RemoveAllDots() \
-	Dot_Init()
-
+#define void DotClear() \
+    DotInit()
 
 #endif /* DOT_H_ */
