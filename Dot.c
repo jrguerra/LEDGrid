@@ -13,11 +13,11 @@ typedef struct {
 	int NumDots;	
 } DotGlobalsType;
 
-DotGlobaType DotGlobals;
+DotGlobalsType DotGlobals;
 
 void DotInit() 
 {
-	
+	return;
 }
 
 int DotAdd()

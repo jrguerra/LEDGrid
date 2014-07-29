@@ -31,7 +31,7 @@ typedef struct {
 	signed char y;
 } Vector, *PVector;
 
-typef struct {
+typedef struct {
 	Vector veloc;
 	Vector pos;
 } Dot, *PDot;
@@ -48,7 +48,7 @@ int DotCount();
 
 void DotMove(unsigned char index);
 
-#define void DotClear() \
+#define DotClear() \
     DotInit()
 
 #endif /* DOT_H_ */
